@@ -1,0 +1,129 @@
+.big-slider {
+    width: 1600px;
+    margin: 0 auto;
+
+    &__name {
+        padding: 25px 0 0 60px;
+
+        & p {
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 47px;
+            color: #2a2a2a;
+        }
+    }
+
+    &__content {
+        margin-top: 40px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__slider {
+        padding-left: 0px;
+        width: 1500px;
+        overflow: hidden;
+        height: 450px;
+        display: flex;
+        align-items: center;
+    }
+    &__flex-line {
+        display: flex;
+        margin-left: 0px;
+        transition: all 0.3s;
+    }
+    &__element {
+        width: 280px;
+        height: 435px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 7px;
+        cursor: pointer;
+        margin: 0 7px 0 7px;
+        &:hover {
+            background: rgba(255, 255, 255, 0.02);
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+        }
+        &-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & img {
+                margin-top: 10px;
+                max-width: 250px;
+                max-height: 280px;
+            }
+
+            & p {
+                margin-top: 20px;
+                width: 250px;
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            justify-content: space-between;
+            width: 226px;
+            align-items: center;
+            & p {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 25px;
+                line-height: 30px;
+                color: #efa500;
+            }
+        }
+    }
+}
+@media (max-width: 1600px) {
+    .big-slider {
+        width: 100%;
+
+        &__slider {
+            width: 1176px;
+        }
+    }
+}
+@media (max-width: 1300px) {
+    .big-slider {
+        &__slider {
+            width: 882px;
+        }
+    }
+}
+@media (max-width: 1030px) {
+    .big-slider {
+       
+        &__name {
+            padding: 25px 0 0 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & p {
+                font-size: 30px;
+                width: 85%;
+            }
+        }
+        &__slider {
+            width: 588px;
+        }
+    }
+}
+@media (max-width: 730px) {
+    .big-slider {
+        &__slider {
+            width: 294px;
+        }
+    }
+}

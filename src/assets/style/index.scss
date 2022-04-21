@@ -1,5 +1,4 @@
 @import './colorsAndFonts.scss';
-@import "~normalize.css/normalize.css";
 
 * {
     margin: 0;
@@ -8,4 +7,7 @@
 }
 body {
     background-color: $mainColor;
+    min-width: 360px;
 }
+
+
