@@ -1,6 +1,9 @@
 export type productDataTypeElement = {
 
     "name": string,
+    "model": string,
+    "brand": string,
+    "memory": string,
     "price": number,
     "balance": number,
     "category": string,
@@ -9,7 +12,7 @@ export type productDataTypeElement = {
     "prop": { "type": string, "value": string }[],
     "mainProp": object,
     "urlName": string[],
-    [arg:string]:any
+    [arg: string]: any
 }
 
 export type productDataType = productDataTypeElement[];
@@ -18,29 +21,32 @@ export const productData: productDataType = [
     {
 
         "name": "Смартфон Xiaomi Redmi Note 10S 6/128GB синий океан",
+        "model": "Redmi Note 10S",
+        "brand": "Xiaomi",
+        "memory": "6/128GB",
         "price": 12000,
         "balance": 10,
-        "category": "Смартфоны",
+        "category": "НеСмартфоны",
         "colorName": "Синее Море",
         "colorHex": "#89C6C7",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.43"
+                "type": "Диагональ (дюйм)", "value": "6.43"
             },
             {
-                "type": "Разрешение", "value": "2400x1080"
+                "type": "Разрешение (пикс)", "value": "2400x1080"
             },
             {
-                "type": "Встроенная память", "value": "128"
+                "type": "Встроенная память (Гб)", "value": "128"
             },
             {
-                "type": "Оперативная память", "value": "6"
+                "type": "Оперативная память (Гб)", "value": "6"
             },
             {
-                "type": "Основная камера", "value": "64"
+                "type": "Основная камера (Мп)", "value": "64"
             },
             {
-                "type": "Фронтальная камера", "value": "13"
+                "type": "Фронтальная камера (Мп)", "value": "13"
             }
         ],
         "mainProp": {},
@@ -49,30 +55,32 @@ export const productData: productDataType = [
     {
 
         "name": "Смартфон Xiaomi Redmi Note 10S 4/128GB белая галька",
+        "model": "Redmi Note 10S",
+        "brand": "Xiaomi",
+        "memory": "4/128GB",
         "price": 13000,
-
         "balance": 10,
         "category": "Смартфоны",
         "colorName": "Белый",
         "colorHex": "#FFFFFF",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.43"
+                "type": "Диагональ (дюйм)", "value": "6.43"
             },
             {
-                "type": "Разрешение", "value": "2400x1080"
+                "type": "Разрешение (пикс)", "value": "2400x1080"
             },
             {
-                "type": "Встроенная память", "value": "128"
+                "type": "Встроенная память (Гб)", "value": "128"
             },
             {
-                "type": "Оперативная память", "value": "4"
+                "type": "Оперативная память (Гб)", "value": "4"
             },
             {
-                "type": "Основная камера", "value": "64"
+                "type": "Основная камера (Мп)", "value": "64"
             },
             {
-                "type": "Фронтальная камера", "value": "13"
+                "type": "Фронтальная камера (Мп)", "value": "13"
             }
         ],
         "mainProp": {},
@@ -81,30 +89,32 @@ export const productData: productDataType = [
     {
 
         "name": "Смартфон Xiaomi Redmi 9C NFC 4/128GB (черный)",
+        "model": "Redmi 9C NFC",
+        "brand": "Xiaomi",
         "balance": 10,
         "price": 14000,
-
+        "memory": "4/128GB",
         "category": "Смартфоны",
         "colorName": "Черный",
         "colorHex": "#000000",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.53"
+                "type": "Диагональ (дюйм)", "value": "6.53"
             },
             {
-                "type": "Разрешение", "value": "1600x720"
+                "type": "Разрешение (пикс)", "value": "1600x720"
             },
             {
-                "type": "Встроенная память", "value": "128"
+                "type": "Встроенная память (Гб)", "value": "128"
             },
             {
-                "type": "Оперативная память", "value": "4"
+                "type": "Оперативная память (Гб)", "value": "4"
             },
             {
-                "type": "Основная камера", "value": "13"
+                "type": "Основная камера (Мп)", "value": "13"
             },
             {
-                "type": "Фронтальная камера", "value": "5"
+                "type": "Фронтальная камера (Мп)", "value": "5"
             }
         ],
         "mainProp": {},
@@ -113,30 +123,32 @@ export const productData: productDataType = [
     {
 
         "name": "Смартфон Xiaomi Redmi 9C NFC 4/128GB (синий)",
+        "model": "Redmi 9C NFC",
+        "brand": "Xiaomi",
         "balance": 10,
         "price": 15000,
-
+        "memory": "4/128GB",
         "category": "Смартфоны",
         "colorName": "Cиний",
         "colorHex": "#0000FF",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.53"
+                "type": "Диагональ (дюйм)", "value": "6.53"
             },
             {
-                "type": "Разрешение", "value": "1600x720"
+                "type": "Разрешение (пикс)", "value": "1600x720"
             },
             {
-                "type": "Встроенная память", "value": "128"
+                "type": "Встроенная память (Гб)", "value": "128"
             },
             {
-                "type": "Оперативная память", "value": "4"
+                "type": "Оперативная память (Гб)", "value": "4"
             },
             {
-                "type": "Основная камера", "value": "13"
+                "type": "Основная камера (Мп)", "value": "13"
             },
             {
-                "type": "Фронтальная камера", "value": "5"
+                "type": "Фронтальная камера (Мп)", "value": "5"
             }
         ],
         "mainProp": {},
@@ -145,30 +157,32 @@ export const productData: productDataType = [
     {
 
         "name": "Смартфон Xiaomi Redmi 10 4/64GB синее море",
+        "model": "Redmi 10",
+        "brand": "Xiaomi",
         "balance": 10,
         "price": 16000,
-
+        "memory": "4/64GB",
         "category": "Смартфоны",
         "colorName": "Синее Море",
         "colorHex": "#89C6C7",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.5"
+                "type": "Диагональ (дюйм)", "value": "6.5"
             },
             {
-                "type": "Разрешение", "value": "2400x1080"
+                "type": "Разрешение (пикс)", "value": "2400x1080"
             },
             {
-                "type": "Встроенная память", "value": "64"
+                "type": "Встроенная память (Гб)", "value": "64"
             },
             {
-                "type": "Оперативная память", "value": "4"
+                "type": "Оперативная память (Гб)", "value": "4"
             },
             {
-                "type": "Основная камера", "value": "50"
+                "type": "Основная камера (Мп)", "value": "50"
             },
             {
-                "type": "Фронтальная камера", "value": "8"
+                "type": "Фронтальная камера (Мп)", "value": "8"
             }
         ],
         "mainProp": {},
@@ -177,29 +191,32 @@ export const productData: productDataType = [
     {
 
         "name": "Смартфон Xiaomi Redmi 10 4/64GB серый карбон",
+        "model": "Redmi 10",
+        "brand": "Xiaomi",
         "balance": 10,
+        "memory": "4/64GB",
         "price": 17000,
         "category": "Смартфоны",
         "colorName": "Серый карбон",
         "colorHex": "#5C5C5C",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.5"
+                "type": "Диагональ (дюйм)", "value": "6.5"
             },
             {
-                "type": "Разрешение", "value": "2400x1080"
+                "type": "Разрешение (пикс)", "value": "2400x1080"
             },
             {
-                "type": "Встроенная память", "value": "64"
+                "type": "Встроенная память (Гб)", "value": "64"
             },
             {
-                "type": "Оперативная память", "value": "4"
+                "type": "Оперативная память (Гб)", "value": "4"
             },
             {
-                "type": "Основная камера", "value": "50"
+                "type": "Основная камера (Мп)", "value": "50"
             },
             {
-                "type": "Фронтальная камера", "value": "8"
+                "type": "Фронтальная камера (Мп)", "value": "8"
             }
         ],
         "mainProp": {},
@@ -208,29 +225,32 @@ export const productData: productDataType = [
     {
 
         "name": "Смартфон Realme C25S 4/128GB синий",
+        "model": "C25S",
+        "brand": "Realme",
         "balance": 10,
+        "memory": "4/128GB",
         "price": 18000,
         "category": "Смартфоны",
         "colorName": "Cиний",
         "colorHex": "#0000FF",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.5"
+                "type": "Диагональ (дюйм)", "value": "6.5"
             },
             {
-                "type": "Разрешение", "value": "1600x720"
+                "type": "Разрешение (пикс)", "value": "1600x720"
             },
             {
-                "type": "Встроенная память", "value": "128"
+                "type": "Встроенная память (Гб)", "value": "128"
             },
             {
-                "type": "Оперативная память", "value": "4"
+                "type": "Оперативная память (Гб)", "value": "4"
             },
             {
-                "type": "Основная камера", "value": "48"
+                "type": "Основная камера (Мп)", "value": "48"
             },
             {
-                "type": "Фронтальная камера", "value": "8"
+                "type": "Фронтальная камера (Мп)", "value": "8"
             }
         ],
         "mainProp": {},
@@ -238,30 +258,32 @@ export const productData: productDataType = [
     },
     {
         "name": "Смартфон Realme C25S 4/128GB серый",
+        "model": "C25S",
+        "brand": "Realme",
         "balance": 10,
         "price": 19000,
-
+        "memory": "4/128GB",
         "category": "Смартфоны",
         "colorName": "Серый",
         "colorHex": "#808080",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.5"
+                "type": "Диагональ (дюйм)", "value": "6.5"
             },
             {
-                "type": "Разрешение", "value": "1600x720"
+                "type": "Разрешение (пикс)", "value": "1600x720"
             },
             {
-                "type": "Встроенная память", "value": "128"
+                "type": "Встроенная память (Гб)", "value": "128"
             },
             {
-                "type": "Оперативная память", "value": "4"
+                "type": "Оперативная память (Гб)", "value": "4"
             },
             {
-                "type": "Основная камера", "value": "48"
+                "type": "Основная камера (Мп)", "value": "48"
             },
             {
-                "type": "Фронтальная камера", "value": "8"
+                "type": "Фронтальная камера (Мп)", "value": "8"
             }
         ],
         "mainProp": {},
@@ -269,30 +291,32 @@ export const productData: productDataType = [
     },
     {
         "name": "Смартфон Realme 9 Pro 8/128GB черный",
+        "model": "9 Pro",
+        "brand": "Realme",
         "balance": 10,
         "price": 20000,
-
+        "memory": "8/128GB",
         "category": "Смартфоны",
         "colorName": "Черный",
         "colorHex": "#000000",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.6"
+                "type": "Диагональ (дюйм)", "value": "6.6"
             },
             {
-                "type": "Разрешение", "value": "2412x1080"
+                "type": "Разрешение (пикс)", "value": "2412x1080"
             },
             {
-                "type": "Встроенная память", "value": "128"
+                "type": "Встроенная память (Гб)", "value": "128"
             },
             {
-                "type": "Оперативная память", "value": "8"
+                "type": "Оперативная память (Гб)", "value": "8"
             },
             {
-                "type": "Основная камера", "value": "64"
+                "type": "Основная камера (Мп)", "value": "64"
             },
             {
-                "type": "Фронтальная камера", "value": "16"
+                "type": "Фронтальная камера (Мп)", "value": "16"
             }
         ],
         "mainProp": {},
@@ -300,65 +324,69 @@ export const productData: productDataType = [
     },
     {
         "name": "Смартфон Realme 8i 4/128GB космический черный",
+        "model": "8i",
+        "brand": "Realme",
         "balance": 10,
         "price": 21000,
-
+        "memory": "4/128GB",
         "category": "Смартфоны",
         "colorName": "Космический черный",
         "colorHex": "#4A3E3E",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.6"
+                "type": "Диагональ (дюйм)", "value": "6.6"
             },
             {
-                "type": "Разрешение", "value": "2412x1080"
+                "type": "Разрешение (пикс)", "value": "2412x1080"
             },
             {
-                "type": "Встроенная память", "value": "128"
+                "type": "Встроенная память (Гб)", "value": "128"
             },
             {
-                "type": "Оперативная память", "value": "4"
+                "type": "Оперативная память (Гб)", "value": "4"
             },
             {
-                "type": "Основная камера", "value": "50"
+                "type": "Основная камера (Мп)", "value": "50"
             },
             {
-                "type": "Фронтальная камера", "value": "10"
+                "type": "Фронтальная камера (Мп)", "value": "10"
             }
         ],
         "mainProp": {},
-        "urlName": ["https://res.cloudinary.com/cifroteh/image/upload/v1649135895/digital/smartphones/realme/8i/spaceblack/1_ai5j0q.jpg","https://res.cloudinary.com/cifroteh/image/upload/v1649135895/digital/smartphones/realme/8i/spaceblack/2_ixgso9.jpg"],
+        "urlName": ["https://res.cloudinary.com/cifroteh/image/upload/v1649135895/digital/smartphones/realme/8i/spaceblack/1_ai5j0q.jpg", "https://res.cloudinary.com/cifroteh/image/upload/v1649135895/digital/smartphones/realme/8i/spaceblack/2_ixgso9.jpg"],
     },
     {
         "name": "Смартфон Realme 8i 4/128GB космический фиолетовый",
+        "model": "8i",
+        "brand": "Realme",
         "balance": 10,
         "price": 22000,
-
+        "memory": "4/128GB",
         "category": "Смартфоны",
         "colorName": "Космический фиолетовый",
         "colorHex": "#CDB8E8",
         "prop": [
             {
-                "type": "Диагональ", "value": "6.6"
+                "type": "Диагональ (дюйм)", "value": "6.6"
             },
             {
-                "type": "Разрешение", "value": "2412x1080"
+                "type": "Разрешение (пикс)", "value": "2412x1080"
             },
             {
-                "type": "Встроенная память", "value": "128"
+                "type": "Встроенная память (Гб)", "value": "128"
             },
             {
-                "type": "Оперативная память", "value": "4"
+                "type": "Оперативная память (Гб)", "value": "4"
             },
             {
-                "type": "Основная камера", "value": "50"
+                "type": "Основная камера (Мп)", "value": "50"
             },
             {
-                "type": "Фронтальная камера", "value": "10"
+                "type": "Фронтальная камера (Мп)", "value": "10"
             }
         ],
         "mainProp": {},
-        "urlName": ["https://res.cloudinary.com/cifroteh/image/upload/v1649135618/digital/smartphones/realme/8i/spaceperple/1_cczqkn.jpg","https://res.cloudinary.com/cifroteh/image/upload/v1649135618/digital/smartphones/realme/8i/spaceperple/2_kvebqh.jpg"],
+        "urlName": ["https://res.cloudinary.com/cifroteh/image/upload/v1649135618/digital/smartphones/realme/8i/spaceperple/1_cczqkn.jpg", "https://res.cloudinary.com/cifroteh/image/upload/v1649135618/digital/smartphones/realme/8i/spaceperple/2_kvebqh.jpg"],
     },
 ]
 

@@ -1,0 +1,15 @@
+.orderTable {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    & > p {
+        margin: 25px 0 10px 15px;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 47px;
+
+        color: #1d1d1d;
+    }
+}

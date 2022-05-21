@@ -1,24 +1,26 @@
-import React, { FC, useRef } from "react";
-import IconButton from '@mui/material/IconButton';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Link } from "react-router-dom";
 import { productDataTypeElement } from "../../data/productData";
+import ToCartButton from "../Buttons/ToCartButton";
+
 
 export default function BigProductSliderItem(props: { element: productDataTypeElement }) {
 
     const element = props.element;
+
 
     return (
 
         <div className="big-slider__element">
             <div className="big-slider__element-top">
                 <img src={element['urlName'][0]} alt="" />
-                <p>{element['name']}</p>
+                <Link to={'/product?name=' + element.name} >{element['name']}</Link>
             </div>
             <div className="big-slider__element-bottom">
-                <p>12000p</p>
-                <IconButton>
-                    <ShoppingCartOutlinedIcon sx={{ width: "30px", height: "30px", color: "#151A40" }} />
-                </IconButton>
+                <p>{element.price} р</p>
+
+                <ToCartButton element={element} />
+
+
             </div>
         </div>
 

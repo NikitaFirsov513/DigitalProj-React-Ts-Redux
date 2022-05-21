@@ -12,7 +12,7 @@ const initialState: IProductListState = {
     productList: null,
 }
 
-const sliceProduct = "product";
+const sliceProduct = "productList";
 
 const productListSlice = createSlice({
     name: sliceProduct,

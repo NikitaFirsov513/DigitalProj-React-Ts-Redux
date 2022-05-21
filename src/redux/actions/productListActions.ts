@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { productData } from "../../data/productData";
+import { productData, productDataType } from "../../data/productData";
 
 
 const ProductListActions = {
@@ -13,9 +13,40 @@ export const setProductList = createAsyncThunk(
     async function () {
 
 
-        await setTimeout(() => { }, 3000)
+        //await setTimeout(() => { }, 3000)
 
-        return Promise.resolve(productData);
+        let req
+        while (1) {
+            req = await fetch(`http://localhost:80/digital/hs/product/all`, { method: 'GET', });
+
+            if (req.ok) {
+                break;
+            }
+        }
+        
+        if (req !== undefined) {
+
+            const data: any = await req.json();
+
+            if (Array.isArray(data))
+                data.map(elem => {
+
+                    elem['urlName'] = JSON.parse(elem['urlName'])
+                    elem['prop'] = JSON.parse(elem['prop']);
+                    elem['mainProp'] = JSON.parse(elem['mainProp']);
+                })
+
+
+
+
+            return data;
+
+
+        }
+
+
+
+        // return Promise.resolve(productData);
         // return new Promise((res, rej) => { res(productData ) })
         /* return await setTimeout(() => {
              console.log("asd");

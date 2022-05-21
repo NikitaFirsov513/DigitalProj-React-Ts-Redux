@@ -1,0 +1,215 @@
+.product {
+    width: 1550px;
+    margin-top: 16px;
+    background: #ffffff;
+    box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+
+    &__name {
+        padding: 28px 0 0 25px;
+        & p {
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 47px;
+
+            color: #1d1d1d;
+        }
+    }
+
+    &__buttons {
+        margin: 0 0 0 45px;
+    }
+
+    &__button {
+        &-text {
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            color: #151a40;
+            height: 25px;
+            width: auto;
+            margin-left: 5px;
+
+            &-a {
+                color: #EFA500;
+
+            }
+        }
+
+        &-icon {
+            height: 25px;
+            width: auto;
+            color: #151a40;
+            &-a {
+                color: #EFA500;
+
+            }
+        }
+    }
+
+    &__info {
+        margin: 10px 45px 10px 45px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__prop {
+        display: flex;
+    }
+
+    &__images {
+        max-width: 500px;
+        max-height: 555px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__data {
+        margin: 0 0 0 10px;
+    }
+    &__memory {
+        & > p {
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 26px;
+
+            color: #1d1d1d;
+        }
+
+        &-list {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0 0 5px;
+            & a {
+                border-radius: 4px;
+                height: 22px;
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 22px;
+                color: #ffffff;
+                background-color: #151a40;
+                padding: 4px 10px 4px 10px;
+            }
+        }
+    }
+    &__color {
+        margin: 15px 0 0 0;
+        & > p {
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 26px;
+
+            color: #1d1d1d;
+        }
+
+        &-list {
+            display: flex;
+            gap: 5px;
+            margin: 10px 0 0 5px;
+
+            & a {
+                width: 25px;
+                height: 25px;
+                border-radius: 50px;
+                background-color: #151a40;
+                //border: 5px solid #EFA500;
+            }
+        }
+    }
+
+    &__params {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 340px;
+        margin-top: 25px;
+
+        & > p {
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            /* identical to box height */
+
+            color: #151a40;
+            cursor: pointer;
+        }
+
+        &-element {
+            display: flex;
+            justify-content: space-between;
+
+            & p {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 18px;
+                /* identical to box height */
+
+                color: #1d1d1d;
+            }
+        }
+    }
+    &__brand {
+        margin-top: 15px;
+        & p {
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 47px;
+            /* identical to box height */
+
+            color: #1d1d1d;
+        }
+
+        & a {
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            /* identical to box height */
+
+            color: #151a40;
+        }
+    }
+    &__basket {
+        background: #ffffff;
+        box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.25);
+        border-radius: 2px;
+        width: 406px;
+        height: 175px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-price {
+            width: 350px;
+            display: flex;
+            justify-content: space-between;
+            margin: 35px 18px 35px 18px;
+
+            & p {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 32px;
+                line-height: 38px;
+
+                color: #2a2a2a;
+            }
+        }
+    }
+}

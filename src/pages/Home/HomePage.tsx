@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BigProductSlider from "../../components/BigProductSlider/BigProductSlider";
 import { RootState } from "../../redux/store/store";
@@ -7,7 +7,7 @@ import { addSlider } from "../../redux/reducers/sliderList";
 
 export default function HomePage() {
 
-    let productList = useSelector((state: RootState) => state.product.productList)
+    let productList = useSelector((state: RootState) => state.productList.productList)
 
     const dispatch = useDispatch();
     let sliderData = useSelector((state: RootState) => state.slider.sliderList);

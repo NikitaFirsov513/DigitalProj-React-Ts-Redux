@@ -1,29 +1,55 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { productData, productDataType, productDataTypeElement } from "../../data/productData";
 
+type param = {
+    type: string;
+    value: string[];
+}
+
 type TParamsList = {
     minPrice: number,
     maxPrice: number,
-    [arg: string]: number | string[],
+    colorHex: string[],
+    colorName: string[],
+    category: string[],
+    mainParams: param[],
+
+    //[arg: string]: number | string[],
+
 }
+type TActiveParamsList = {
+    minPrice: number,
+    maxPrice: number,
+    [arg: string]: number | string[],
+
+}
+
 
 export interface ISearchList {
     searchProductList: productDataType | null;
-    paramsList: TParamsList;
+    paramsList: TActiveParamsList;
     allParams: TParamsList;
     productListAfterParams: productDataType | null;
+    viewMode: "ViewModuleIcon" | "ViewListIcon";
 }
 const initialState: ISearchList = {
     searchProductList: null,
-
+    viewMode: "ViewModuleIcon",
     paramsList: {
         minPrice: 0,
         maxPrice: 150000,
+        colorHex: [],
+        category: [],
+        mainParams: []
     },
 
     allParams: {
         minPrice: 0,
         maxPrice: 150000,
+        colorHex: [],
+        category: [],
+        colorName: [],
+        mainParams: [],
     },
 
     productListAfterParams: null,
@@ -48,10 +74,14 @@ const searchSlice = createSlice({
                 //ключ уже есть 
                 if (newParams['type'] === "minPrice" || newParams['type'] === "maxPrice") {
                     //если цена
+
+
                     paramsList[newParams['type']] = newParams['value'];
                 }
-                if (newParams['type'] !== "minPrice" || newParams['type'] !== "maxPrice") {
+                else {
                     //если не цена
+
+
                     let index = paramsList[newParams['type']].indexOf(newParams['value']);
                     if (index !== -1) {
                         paramsList[newParams['type']].splice(index, 1);
@@ -87,12 +117,12 @@ const searchSlice = createSlice({
 
                         switch (key) {
                             case 'minPrice':
-                                if (elem.price > paramsList['minPrice'] || paramsList['minPrice'] == 0) {
+                                if (elem.price >= paramsList['minPrice'] || paramsList['minPrice'] == 0) {
                                     colSimilarParams++;
                                 }
                                 continue;
                             case 'maxPrice':
-                                if (elem.price < paramsList['maxPrice']) {
+                                if (elem.price <= paramsList['maxPrice']) {
                                     colSimilarParams++;
                                 }
                                 continue;
@@ -141,56 +171,166 @@ const searchSlice = createSlice({
             const productList = action.payload.productList;
             let searchProductList: productDataType = [];
             let allParams: TParamsList = {
-                minPrice: 0,
-                maxPrice: 150000,
+                minPrice: 150000,
+                maxPrice: 0,
+                colorHex: [],
+                category: [],
+                colorName: [],
+                mainParams: [],
             };
 
             if (productList == null)
                 return;
 
+
             productList.forEach((element: productDataTypeElement) => {
+
+                if (element.name.toLocaleLowerCase().includes(query.toLowerCase()) || element.category.toLocaleLowerCase().includes(query.toLowerCase())) {
+                    searchProductList.push(element);
+                }
+
+            })
+
+            searchProductList.forEach((element: productDataTypeElement) => {
 
 
                 //elem['name'].toLocaleLowerCase().includes(element.toLowerCase())
 
-                if (element.name.toLocaleLowerCase().includes(query.toLowerCase())) {
-                    searchProductList.push(element);
-                }
 
 
 
 
                 //добавление всех категорий
 
-                //let isFindColor = allParams
+                //макс цена
+                if (allParams.maxPrice < element.price) {
+                    allParams.maxPrice = element.price;
+                }
+
+                //мин цена
+                if (allParams.minPrice > element.price) {
+                    allParams.minPrice = element.price;
+                }
+                //добавление цветов
                 if ('colorHex' in allParams) {
-
-                    //                
-                    console.log("asd")
-
+                    //console.log("asd")
                     if (Array.isArray(allParams.colorHex)) {
                         const isFindNameParams = allParams.colorHex.find((e, i) => {
                             if (e === element.colorHex)
                                 return true;
-
                         })
 
                         if (isFindNameParams === undefined) {
-
                             allParams.colorHex.push(element.colorHex);
-
                         }
-
-
                     }
                 }
 
-                if (!('colorHex' in allParams)) {
-                    //console.log("asd")
 
-                    allParams.colorHex = [element.colorHex];
 
+                if (!('colorName' in allParams)) {
+                    allParams.colorName = [element.colorName];
                 }
+                if ('colorName' in allParams) {
+                    //console.log("asd")
+                    if (Array.isArray(allParams.colorName)) {
+                        const isFindNameParams = allParams.colorName.find((e, i) => {
+                            if (e === element.colorName)
+                                return true;
+                        })
+
+                        if (isFindNameParams === undefined) {
+                            allParams.colorName.push(element.colorName);
+                        }
+                    }
+                }
+
+                if (!('colorName' in allParams)) {
+                    allParams.colorName = [element.colorName];
+                }
+
+
+
+                //Категории
+                if ('category' in allParams) {
+                    //console.log("asd")
+                    if (Array.isArray(allParams.category)) {
+
+                        const isFindNameParams = allParams.category.find((e, i) => {
+                            if (e === element.category)
+                                return true;
+                        })
+
+                        if (isFindNameParams === undefined) {
+                            allParams.category.push(element.category);
+                        }
+                    }
+                }
+
+
+                if (!('category' in allParams)) {
+                    allParams.category = [element.category];
+                }
+
+
+
+                element.prop.forEach((elem, index) => {
+
+                    let indexParam: null | number = null;
+
+                    const isFindNameParams = allParams.mainParams.find((e, i) => {
+
+                        if (e.type == elem.type) {
+
+                            indexParam = i;
+                            return true;
+
+                        }
+
+                    })
+
+                    if (isFindNameParams !== undefined && indexParam !== null) {
+                        //                        const isFindValue = newParams['mainParams'][index]['value'].find((e, i) => e == element['value'])
+
+                        const isFindValue = allParams.mainParams[indexParam].value.find((e, i) => e === elem.value);
+
+                        if (!isFindValue)
+                            allParams.mainParams[index].value.push(elem.value);
+
+                    } else {
+
+                        allParams.mainParams.push({ type: elem.type, value: [elem.value] });
+
+                    }
+
+
+
+                })
+                /*
+                                element.prop.forEach((elem, index: number | null) => {
+                
+                                    index = null;
+                                    //if (typeof allParams['mainParams'] == "Array")
+                
+                
+                                    if (Array.isArray(allParams['mainParams'])) {
+                
+                                        const isFindNameParams = allParams['mainParams'].find((e, i) => {
+                                            if (e['type'] == elem['type']) {
+                                                index = i;
+                                                return true;
+                                            }
+                                        })
+                
+                
+                                    }
+                
+                                })
+                */
+
+
+
+
 
 
 
@@ -215,11 +355,26 @@ const searchSlice = createSlice({
             state.paramsList = {
                 minPrice: 0,
                 maxPrice: 150000,
+                colorHex: [],
+                category: [],
+                mainParams: [],
             };
             state.productListAfterParams = prod;
+        },
+        toggleView: (state, action) => {
+            const viewMode = JSON.parse(JSON.stringify(state, undefined, 2)).viewMode;
+            let newViewMode: string;
+
+            if (viewMode == "ViewListIcon") {
+                state.viewMode = "ViewModuleIcon";
+            } else {
+                state.viewMode = "ViewListIcon";
+            }
+
+
+
+
         }
-
-
 
     },
     extraReducers: (builder) => {
@@ -231,6 +386,7 @@ const searchSlice = createSlice({
 export const {
     addParams,
     setDefault,
-    setSearchProductList } = searchSlice.actions;
+    setSearchProductList,
+    toggleView } = searchSlice.actions;
 
 export default searchSlice;

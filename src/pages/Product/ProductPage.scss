@@ -1,0 +1,16 @@
+.productPage {
+    position: relative;
+    z-index: 3;
+    margin: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 14px;
+    min-height: 1000px;
+
+    &__container {
+        width: 1600px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+}

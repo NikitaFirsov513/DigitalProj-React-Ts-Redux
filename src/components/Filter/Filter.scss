@@ -1,0 +1,10 @@
+.filter {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+    &__border {
+        width: 1px;
+        height: 25px;
+        background-color: rgba($color: #1d1d1d, $alpha: 0.5);
+    }
+}

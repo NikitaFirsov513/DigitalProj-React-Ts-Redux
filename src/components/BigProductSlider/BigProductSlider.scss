@@ -59,7 +59,8 @@
                 max-height: 280px;
             }
 
-            & p {
+            & a {
+                color: #1d1d1d;
                 margin-top: 20px;
                 width: 250px;
                 font-family: "Roboto";
@@ -103,7 +104,6 @@
 }
 @media (max-width: 1030px) {
     .big-slider {
-       
         &__name {
             padding: 25px 0 0 0px;
             display: flex;
