@@ -13,7 +13,9 @@ export default function BigProductListElement(props: { element: productDataTypeE
 
         <div className="productList__element">
             <div className="productList__element-top">
-                <img src={element['urlName'][0]} alt="" />
+                <div className="productList__element-image">
+                    <img src={element['urlName'][0]} alt="" />
+                </div>
                 <Link to={'/product?name=' + element.name} >{element['name']}</Link>
             </div>
             <div className="productList__element-bottom">

@@ -42,7 +42,6 @@ export default function FilterProp() {
         <div className='prop'>
 
             <IconButton onClick={e => toggle(true)}>
-
                 <FilterAltIcon sx={{
                     color: "#151A40", width: "30px", height: "30px"
                 }} />

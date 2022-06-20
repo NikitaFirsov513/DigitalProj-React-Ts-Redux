@@ -29,7 +29,6 @@ export default function Header() {
     let basketKol = useSelector((state: RootState) => state.basket.basketList).length;
     let totalKolCompare = useSelector((state: RootState) => state.compare.totalCol);
     let isAuth = useSelector((state: RootState) => state.auth.isAuth);
-    let userData = useSelector((state: RootState) => state.auth.userData);
 
 
     dispatch(setCategoryList());
@@ -49,9 +48,7 @@ export default function Header() {
     }
 
     function loginOpen() {
-
         dispatch(setDialog({ isLoginOpen: true, isRegistrationOpen: false, isLoad: false }));
-
     }
 
 
@@ -91,8 +88,7 @@ export default function Header() {
                 <div className="header__bottom">
                     <div className="header__menu">
                         {categoryList ? categoryList.map((element: menuDataTypeElement) => {
-                            return (<Link key={element.URLName} to={"/search/" + element.URLName}>{element.name}</Link>)
-
+                            return (<Link key={element.name} to={"/search/" + element.name}>{element.name}</Link>)
                         }) : <></>}
                     </div>
                     <div className="header__toggle header__toggle--active"></div>

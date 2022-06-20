@@ -30,10 +30,8 @@ export type TAllOrderElement = {
 
 
 export default function OrderTableRow(props: { data: TAllOrderElement }) {
-
+    
     const data = props.data;
-
-
     const [open, setOpen] = React.useState(true);
     const tovarList = data.tovarList.split('&');
     const priceList = data.priceList.split('&');
@@ -75,8 +73,6 @@ export default function OrderTableRow(props: { data: TAllOrderElement }) {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-
-
                                     {tovarList.map((e, i) => {
                                         return (
                                             <TableRow key={data.dataCreate + e + i}>
@@ -94,20 +90,12 @@ export default function OrderTableRow(props: { data: TAllOrderElement }) {
                                                 </TableCell>
                                             </TableRow>)
                                     })}
-
-
-
-
-
-
-
                                 </TableBody>
                             </Table>
                         </Box>
                     </Collapse>
                 </TableCell>
             </TableRow>
-
         </>
     )
 }

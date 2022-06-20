@@ -22,8 +22,18 @@ export default function HomePage() {
 
     return (
         <div className="home">
-            <BigProductSlider productList={sliderXiaomi} query={"Смартфон Xiaomi"} name={"Смартфоны Xiaomi"} id={"SmartXiaomi"} />
-            <BigProductSlider productList={sliderRealme} query={"Смартфон Xiaomi"} name={"Смартфоны Realme"} id={"SmartRealme"} />
+            
+            <BigProductSlider
+                productList={sliderXiaomi}
+                query={"Смартфон Xiaomi"}
+                name={"Смартфоны Xiaomi"}
+                id={"SmartXiaomi"} />
+
+            <BigProductSlider
+                productList={sliderRealme}
+                query={"Смартфон Xiaomi"}
+                name={"Смартфоны Realme"}
+                id={"SmartRealme"} />
 
         </div>)
 

@@ -25,7 +25,6 @@ export const setAllOrder = createAsyncThunk(
 
     async function (name: string) {
 
-
         let req = await fetch(`http://localhost/digital/hs/оrders/all`,
             {
                 method: 'POST',
@@ -36,21 +35,17 @@ export const setAllOrder = createAsyncThunk(
                     })
             });
         let data: dataType[] = await req.json();
-
-
-
-        //console.log(newArray);
+        
         return data;
+    })
 
-        //return newArray;
+//console.log(newArray);
+//return newArray;
 
 
         //await setTimeout(() => { }, 3000)
         //return Promise.resolve(allOrder);
-        /*let req = await fetch(`http://localhost:80/digital/hs/category/all`, { method: 'GET', });
-        req = await req.json();
-        return req;*/
+/*let req = await fetch(`http://localhost:80/digital/hs/category/all`, { method: 'GET', });
+req = await req.json();
+return req;*/
         // await setTimeout(()=>{return true},5000)
-
-    })
-

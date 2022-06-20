@@ -28,7 +28,6 @@ const sliderListSlice = createSlice({
                 return
             }
 
-
             if (Array.isArray(query)) {
                 query.forEach(element => {
                     if (!(element in newSliderList)) {

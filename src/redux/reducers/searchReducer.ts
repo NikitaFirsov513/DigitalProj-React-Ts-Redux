@@ -185,7 +185,13 @@ const searchSlice = createSlice({
 
             productList.forEach((element: productDataTypeElement) => {
 
-                if (element.name.toLocaleLowerCase().includes(query.toLowerCase()) || element.category.toLocaleLowerCase().includes(query.toLowerCase())) {
+                const IsName = element.name.toLocaleLowerCase().includes(query.toLowerCase());
+                const IsCategory = element.category.toLocaleLowerCase().includes(query.toLowerCase());
+                
+
+
+
+                if (IsName || IsCategory) {
                     searchProductList.push(element);
                 }
 

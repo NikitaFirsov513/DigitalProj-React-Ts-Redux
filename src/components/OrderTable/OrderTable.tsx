@@ -21,8 +21,7 @@ import './orderTable.scss';
 export default function OrderTable() {
 
     let allOrder = useSelector((state: RootState) => state.allOrder.orderList);
-
-
+    
     return (
         <div className='orderTable'>
             <p>Список покупок</p>
@@ -39,16 +38,13 @@ export default function OrderTable() {
                     <TableBody>
                         {
                             allOrder.map(e => {
-
                                 return (<OrderTableRow key={e.dataCreate} data={e} />)
-
                             })}
-
-
-
                     </TableBody>
                 </Table>
             </TableContainer>
-        </div>)
+        </div>
+        
+        )
 }
 

@@ -47,7 +47,6 @@ const authSlice = createSlice({
     reducers: {
 
         setDialog: (state, action) => {
-
             const isLoginOpen = action.payload.isLoginOpen;
             const isRegistrationOpen = action.payload.isRegistrationOpen;
             const isLoad = action.payload.isLoad;
@@ -55,18 +54,10 @@ const authSlice = createSlice({
             state.isLoginOpen = isLoginOpen;
             state.isRegistrationOpen = isRegistrationOpen;
             state.isLoad = isLoad;
-
         },
         setUserData: (state, action) => {
-
-
-
-
             state.userData = action.payload;
             state.isAuth = true;
-
-
-
         },
         logout: (state, action) => {
 

@@ -16,9 +16,6 @@ export default function Basket() {
                         <BasketList basketList={basketList} />
                         <BasketTotalPrice basketList={basketList} />
                     </div>
-
-
-
                     :
                     <>Товаров нет</>
                 }

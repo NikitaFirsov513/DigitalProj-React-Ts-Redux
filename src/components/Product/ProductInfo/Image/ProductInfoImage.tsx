@@ -10,6 +10,5 @@ export default function ProductInfoImage() {
     return (
         <div className="product__images" >
             <img src={productImage} alt="" />
-            <p>Список картинок</p>
         </div>)
 }

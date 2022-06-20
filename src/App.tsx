@@ -34,7 +34,6 @@ function App() {
         <Route path='/basket' element={<Basket />} />
         <Route path='/compare' element={<ComparePage />} />
         <Route path='/order' element={<OrderPage />} />
-
       </Routes>
     </>
 
